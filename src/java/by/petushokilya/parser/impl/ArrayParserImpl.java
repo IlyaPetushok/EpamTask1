@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class ArrayParserImpl implements ArrayParser {
 
-    private String regex = "\\-?\\s*";
+    private String splitRegex = ";";
 
     public ArrayParserImpl() {
     }
@@ -18,7 +18,7 @@ public class ArrayParserImpl implements ArrayParser {
         int[] result = null;
         if (validator.ArrayLineCorrect(line)) {
             if (!line.isBlank()) {
-                String[] numbers = line.split(regex);
+                String[] numbers = line.split(splitRegex);
                 result = Arrays.stream(numbers)
                         .mapToInt(Integer::parseInt)
                         .toArray();
