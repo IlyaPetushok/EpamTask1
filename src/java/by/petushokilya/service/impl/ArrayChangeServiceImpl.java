@@ -1,7 +1,7 @@
-package com.company.service.impl;
+package java.by.petushokilya.service.impl;
 
-import com.company.entity.CustomArray;
-import com.company.service.ArrayChangeService;
+import java.by.petushokilya.entity.CustomArray;
+import java.by.petushokilya.service.ArrayChangeService;
 
 public class ArrayChangeServiceImpl implements ArrayChangeService {
     @Override
@@ -14,18 +14,18 @@ public class ArrayChangeServiceImpl implements ArrayChangeService {
     @Override
     public void changeAllValueArray(CustomArray array, int value) {
         int[] arr = array.getArr();
-        for(int i=0;i<arr.length;i++){
-            arr[i]=value;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = value;
         }
         array.setArr(arr);
     }
 
     @Override
     public void changeValueArray(CustomArray array, int value, int replace) {
-        int[] arr=array.getArr();
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]==replace){
-                arr[i]=value;
+        int[] arr = array.getArr();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == replace) {
+                arr[i] = value;
             }
         }
         array.setArr(arr);

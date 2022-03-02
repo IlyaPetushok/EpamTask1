@@ -1,6 +1,6 @@
-package com.company.service;
+package java.by.petushokilya.service;
 
-import com.company.entity.CustomArray;
+import java.by.petushokilya.entity.CustomArray;
 
 public interface ArraySortService {
     void bubleSortArray(CustomArray array);

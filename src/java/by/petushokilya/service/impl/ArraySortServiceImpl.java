@@ -1,13 +1,13 @@
-package com.company.service.impl;
+package java.by.petushokilya.service.impl;
 
-import com.company.entity.CustomArray;
-import com.company.service.ArraySortService;
+import java.by.petushokilya.entity.CustomArray;
+import java.by.petushokilya.service.ArraySortService;
 
 public class ArraySortServiceImpl implements ArraySortService {
 
     @Override
     public void bubleSortArray(CustomArray array) {
-        int arr[] = array.getArr();
+        int[] arr = array.getArr();
         int value;
         boolean flag = true;
         while (flag) {
@@ -26,7 +26,7 @@ public class ArraySortServiceImpl implements ArraySortService {
 
     @Override
     public void insertSortArray(CustomArray array) {
-        int arr[] = array.getArr();
+        int[] arr = array.getArr();
         int value, oporn;
         for (int i = 1; i < arr.length; i++) {
             oporn = i;
@@ -46,11 +46,11 @@ public class ArraySortServiceImpl implements ArraySortService {
 
     @Override
     public void selectionSortArray(CustomArray array) {
-        int arr[] = array.getArr();
+        int[] arr = array.getArr();
         int value, value_2, stepMin, step = 0;
-        while (step != arr.length-1) {
+        while (step != arr.length - 1) {
             value = arr[step];
-            stepMin=step;
+            stepMin = step;
             for (int i = step; i < arr.length - 1; i++) {
                 if (value > arr[i + 1]) {
                     value = arr[i + 1];
