@@ -1,9 +1,15 @@
 package java.by.petushokilya.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.by.petushokilya.entity.CustomArray;
 import java.by.petushokilya.service.ArrayFindInService;
 
 public class ArrayFindInServiceImpl implements ArrayFindInService {
+    private static final Logger logger = LogManager.getLogger(ArrayFindInServiceImpl.class.getName());
+
+
     @Override
     public int negativeQuantityArray(CustomArray array) {
         int[] arr = array.getArr();
@@ -13,6 +19,7 @@ public class ArrayFindInServiceImpl implements ArrayFindInService {
                 quantity++;
             }
         }
+        logger.info("Negative quantity" + quantity);
         return quantity;
     }
 
@@ -25,7 +32,9 @@ public class ArrayFindInServiceImpl implements ArrayFindInService {
                 quantity++;
             }
         }
+        logger.info("Postive quantity" + quantity);
         return quantity;
+
     }
 
     @Override
@@ -37,6 +46,7 @@ public class ArrayFindInServiceImpl implements ArrayFindInService {
                 maxValue = arr[i];
             }
         }
+        logger.info("Maxvalue in array" + maxValue);
         return maxValue;
     }
 
@@ -49,6 +59,7 @@ public class ArrayFindInServiceImpl implements ArrayFindInService {
                 minValue = arr[i];
             }
         }
+        logger.info("Minvalue in array" + minValue);
         return minValue;
     }
 }

@@ -1,9 +1,14 @@
 package java.by.petushokilya.service.impl;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.by.petushokilya.entity.CustomArray;
 import java.by.petushokilya.service.ArraySortService;
 
 public class ArraySortServiceImpl implements ArraySortService {
+
+    private static final Logger logger = LogManager.getLogger(ArraySortServiceImpl.class.getName());
 
     @Override
     public void bubleSortArray(CustomArray array) {
@@ -22,6 +27,7 @@ public class ArraySortServiceImpl implements ArraySortService {
             }
         }
         array.setArr(arr);
+        logger.info("Buble sort array has been implemented");
     }
 
     @Override
@@ -42,6 +48,7 @@ public class ArraySortServiceImpl implements ArraySortService {
             }
         }
         array.setArr(arr);
+        logger.info("Insert sort array has been implemented");
     }
 
     @Override
@@ -63,5 +70,6 @@ public class ArraySortServiceImpl implements ArraySortService {
             step++;
         }
         array.setArr(arr);
+        logger.info("Selection sort array has been implemented");
     }
 }
