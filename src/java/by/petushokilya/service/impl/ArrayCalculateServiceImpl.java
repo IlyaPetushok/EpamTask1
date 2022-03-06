@@ -5,9 +5,21 @@ import org.apache.logging.log4j.Logger;
 
 import java.by.petushokilya.entity.CustomArray;
 import java.by.petushokilya.service.ArrayCalculateService;
+import java.util.OptionalDouble;
 
 public class ArrayCalculateServiceImpl implements ArrayCalculateService {
     private static final Logger logger = LogManager.getLogger(ArrayCalculateServiceImpl.class.getName());
+
+    @Override
+    public OptionalDouble averageArrayOpt(CustomArray array) {
+        int[] arr = array.getArr();
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        logger.info("Average:" + sum / arr.length);
+        return OptionalDouble.of(sum / arr.length);
+    }
 
     @Override
     public int sumArray(CustomArray array) {

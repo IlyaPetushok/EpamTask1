@@ -1,15 +1,29 @@
 package java.by.petushokilya.entity;
 
+import java.by.petushokilya.observer.impl.CustomArrayObserverImpl;
+import java.by.petushokilya.util.GeneratorIdUtil;
 import java.util.Arrays;
 
-public class CustomArray {
+public class CustomArray extends CustomArrayObserverImpl {
+    private int id;
     private int arr[];
 
     public CustomArray() {
+        id= GeneratorIdUtil.generateId();
+        arr=new int[0];
     }
 
     public CustomArray(int... arr) {
+        id= GeneratorIdUtil.generateId();
         this.arr = arr;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public int getLengthArr(){
+        return arr.length;
     }
 
     public int[] getArr() {
@@ -33,4 +47,5 @@ public class CustomArray {
         result = result * 31 + Arrays.hashCode(arr);
         return result;
     }
+
 }

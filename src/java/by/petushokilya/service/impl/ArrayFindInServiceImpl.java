@@ -5,10 +5,37 @@ import org.apache.logging.log4j.Logger;
 
 import java.by.petushokilya.entity.CustomArray;
 import java.by.petushokilya.service.ArrayFindInService;
+import java.util.OptionalInt;
 
 public class ArrayFindInServiceImpl implements ArrayFindInService {
     private static final Logger logger = LogManager.getLogger(ArrayFindInServiceImpl.class.getName());
 
+
+    @Override
+    public OptionalInt maxValueArrayOpt(CustomArray array) {
+        int[] arr = array.getArr();
+        int maxValue = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (maxValue < arr[i]) {
+                maxValue = arr[i];
+            }
+        }
+        logger.info("Maxvalue in array" + maxValue);
+        return OptionalInt.of(maxValue);
+    }
+
+    @Override
+    public OptionalInt minValueArrayOpt(CustomArray array) {
+        int[] arr = array.getArr();
+        int minValue = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (minValue > arr[i]) {
+                minValue = arr[i];
+            }
+        }
+        logger.info("Minvalue in array" + minValue);
+        return OptionalInt.of(minValue);
+    }
 
     @Override
     public int negativeQuantityArray(CustomArray array) {
