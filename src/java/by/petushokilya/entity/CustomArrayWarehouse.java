@@ -7,7 +7,7 @@ public class CustomArrayWarehouse {
     private static Map<Integer, CustomArrayParametrs> array;
 
     public CustomArrayWarehouse() {
-        array=new HashMap<>();
+        array = new HashMap<>();
     }
 
     public static CustomArrayParametrs get(Integer id) {

@@ -13,17 +13,19 @@ import java.util.OptionalInt;
 public class CustomArrayObserverImpl implements CustomArrayObserver {
     @Override
     public void arrayChanged(CustomArrayEvent event) {
-        ArrayFindInServiceImpl findInService=new ArrayFindInServiceImpl();
-        ArrayCalculateServiceImpl calculateService=new ArrayCalculateServiceImpl();
-        CustomArray array= event.getSource();
+        ArrayFindInServiceImpl findInService = new ArrayFindInServiceImpl();
+        ArrayCalculateServiceImpl calculateService = new ArrayCalculateServiceImpl();
+        CustomArray array = event.getSource();
         CustomArrayParametrs parameter = CustomArrayWarehouse.get(array.getId());
-        OptionalInt min =findInService.minValueArrayOpt(array);
-        OptionalInt max =findInService.maxValueArrayOpt(array);
-        OptionalDouble average=calculateService.averageArrayOpt(array);
-        int sum =calculateService.sumArray(array);
+        OptionalInt min = findInService.minValueArrayOpt(array);
+        OptionalInt max = findInService.maxValueArrayOpt(array);
+        OptionalDouble average = calculateService.averageArrayOpt(array);
+        int sum = calculateService.sumArray(array);
         parameter.setAverage(average);
         parameter.setMin(min);
         parameter.setSum(sum);
         parameter.setMax(max);
-    };
+    }
+
+    ;
 }

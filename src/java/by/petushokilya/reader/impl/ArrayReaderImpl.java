@@ -31,7 +31,7 @@ public class ArrayReaderImpl implements java.by.petushokilya.reader.ArrayReader 
                 list.add(line);
             }
         } catch (IOException e) {
-            logger.error("Exception reading",e);
+            logger.error("Exception reading", e);
             throw new CustomException(e);
         }
         logger.info("The reading ended successfully");

@@ -9,20 +9,20 @@ public class CustomArray extends CustomArrayObserverImpl {
     private int arr[];
 
     public CustomArray() {
-        id= GeneratorIdUtil.generateId();
-        arr=new int[0];
+        id = GeneratorIdUtil.generateId();
+        arr = new int[0];
     }
 
     public CustomArray(int... arr) {
-        id= GeneratorIdUtil.generateId();
+        id = GeneratorIdUtil.generateId();
         this.arr = arr;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public int getLengthArr(){
+    public int getLengthArr() {
         return arr.length;
     }
 
